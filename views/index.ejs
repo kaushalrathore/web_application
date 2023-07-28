@@ -1,0 +1,30 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+  <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body style="background-color: aquamarine;">
+  <h1  style=" margin: 10px 650px; text-align:center;">Product List</h1>
+  <a href="/new" style="display: block; margin: 10px 70px ; text-decoration: none; width:100px; text-align: center; color: black; border: 2px solid black; border-radius: 5px; background-color: white;">Add New Product</a>
+  <div id="products-container" style="
+  display:flex; margin:20px  20px;  
+  justify-content: center;
+">
+    <% products.forEach(product => { %>
+      <div class="product-card" style="background-color: white; margin:70px  20px; border: 2px solid black; border-radius: 5px; padding: 10px 10px;" >
+        <h3>Name: <%= product.name %></h3>
+        <p>Description: <%= product.description %></p>
+        <p>Price: $<%= product.price %></p>
+        <a href="/edit/<%= product._id %>" style="text-align: center; border: 1px solid black; display: block; margin-bottom: 15px; width: 50px; text-decoration: none; color: black; border-radius: 8px; background-color: white;">Edit</a>
+        <form action="/delete/<%= product._id %>" method="post">
+          <button type="submit" style="border: 1px solid black; border-radius: 8px;">Delete</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

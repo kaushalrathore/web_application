@@ -1,0 +1,23 @@
+<!-- views/new.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Product</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body style="background-color: aquamarine;">
+  <h1 style=" margin: 10px 600px; text-align:center;">Add New Product</h1>
+  <form action="/new" method="post" style="display: flex;
+  flex-direction: column; margin: 20px 20px; justify-content: center;">
+    <label for="name" style="margin: 10px 600px;">Name:</label>
+    <input style="width: 200px; margin: 10px 600px;" type="text" id="name" name="name" required>
+    <label for="description" style="margin: 10px 600px;">Description:</label>
+    <input style="width: 200px; margin: 10px 600px;" type="text" id="description" name="description" required>
+    <label for="price" style="margin: 10px 600px;">Price:</label>
+    <input style="width: 200px; margin: 10px 600px;" type="number" id="price" name="price" step="0.01" required>
+    <button style="width: 200px; margin: 10px 600px; width:100px" type="submit">Add Product</button>
+  </form>
+</body>
+</html>
