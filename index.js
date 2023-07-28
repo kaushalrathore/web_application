@@ -6,7 +6,7 @@ const Product = require('./models/productsModel');
 const app = express();
 const port = 3000;
 
-// Connect to MongoDB
+
 mongoose.connect('mongodb://0.0.0.0:27017/productDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -14,11 +14,11 @@ mongoose.connect('mongodb://0.0.0.0:27017/productDB', {
     console.log("db connected");
 });
 
-// Body-parser middleware
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Routes for CRUD operations
+
 
 // Show product list
 app.get('/', async (req, res) => {
